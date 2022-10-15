@@ -42,12 +42,13 @@ class VentaController{
                 $save_ventas_productos = $ventaProducto->save();
 
                 if($save && $save_ventas_productos){
-                    $_SESSION['pedido']="complete";
+                    $_SESSION['venta']=[ 'complete'=>true,'producto'=>$pro->nombre,'cantidad'=>$cantidad,'total'=>$coste ];
+                    
                 }else{
-                    $_SESSION['pedido']="failed";
+                    $_SESSION['venta']="failed";
                 }
             }else{
-                $_SESSION['pedido']="failed";
+                $_SESSION['venta']="failed";
             }
         }else{
             

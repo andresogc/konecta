@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.2/dist/sweetalert2.all.min.js" ></script>
   </head>
   <body style="position:relative;padding-bottom:3em;min-height: 100vh;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

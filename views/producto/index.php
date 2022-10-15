@@ -44,8 +44,8 @@
                     <td><?= $producto->peso; ?></td>
                     <td><?= $producto->stock; ?></td>
                     <td>
-                      <a class="btn btn-warning btn-sm" href="<?=base_url?>producto/editar&id=<?=$producto->id?>">Editar</a>
-                      <a class="btn btn-danger btn-sm" href="<?=base_url?>producto/eliminar&id=<?=$producto->id?>">Eliminar</a>
+                      <a class="btn btn-warning btn-sm" href="<?=base_url?>producto/editar&id=<?=$producto->id?>" >Editar</a>
+                      <a class="btn btn-danger btn-sm" href="<?=base_url?>producto/eliminar&id=<?=$producto->id?>" id="eliminar">Eliminar</a>
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -54,4 +54,18 @@
 </div>
   </div>
 </div>
+<script>
+  $('#eliminar').on('click',function (e) { 
+    e.preventDefault();
+    let urlEliminar = $(this).prop('href')
+    Swal.fire({
+      icon: 'warning',
+      title: 'Se dispone a eliminar un producto.Esta acción no se puede deshacer.',
+      text: 'Desea continuar con esta acción?',
+      showCancelButton: true,
+      confirmButtonText: `<a style="text-decoration:none; color:white" href="${urlEliminar}" id="editar">Eliminar</a>`,
+     
+    })
+  });
 
+</script>

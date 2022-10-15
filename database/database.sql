@@ -25,7 +25,7 @@ peso    	    int(255) not null,
 stock		    int(255) not null,
 fecha_creacion	date not null,
 CONSTRAINT pk_productos PRIMARY KEY(id),
-CONSTRAINT fk_producto_categorias FOREIGN KEY(categoria_id) REFERENCES categorias(id) 
+CONSTRAINT fk_producto_categorias FOREIGN KEY(categoria_id) REFERENCES categorias(id) ON DELETE CASCADE
 )ENGINE=InnoDb;
 
 
@@ -46,8 +46,8 @@ venta_id	int(255) not null,
 producto_id	int(255) not null,
 cantidad    int(255) not null,
 CONSTRAINT pk_ventas_pedidos PRIMARY KEY(id),
-CONSTRAINT fk_ventas FOREIGN KEY(venta_id) REFERENCES ventas(id),
-CONSTRAINT fk_productos FOREIGN KEY(producto_id) REFERENCES productos(id)
+CONSTRAINT fk_ventas FOREIGN KEY(venta_id) REFERENCES ventas(id) ON DELETE CASCADE,
+CONSTRAINT fk_productos FOREIGN KEY(producto_id) REFERENCES productos(id) ON DELETE CASCADE
 )ENGINE=InnoDb;
 
 
