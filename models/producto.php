@@ -151,4 +151,21 @@ class Producto{
     }
 
 
+    public function updateStock(){
+        $sql="UPDATE productos SET  stock={$this->getStock()}";
+              
+        $sql.=" WHERE id={$this->id};";
+
+        $save = $this->db->query($sql); 
+
+        $result=false;
+        if($save){
+            $result=true;
+        }
+        return $result;
+    
+    }
+    
+
+
 }

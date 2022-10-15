@@ -10,6 +10,7 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   </head>
   <body style="position:relative;padding-bottom:3em;min-height: 100vh;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -34,7 +35,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Agregar venta</a>
+              <a class="nav-link active" href="<?=base_url?>venta/hacer">Generar venta</a>
             </li>
           </ul>
         </div>

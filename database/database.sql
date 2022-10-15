@@ -44,6 +44,7 @@ CREATE TABLE ventas_productos(
 id		int(255) auto_increment not null,
 venta_id	int(255) not null,
 producto_id	int(255) not null,
+cantidad    int(255) not null,
 CONSTRAINT pk_ventas_pedidos PRIMARY KEY(id),
 CONSTRAINT fk_ventas FOREIGN KEY(venta_id) REFERENCES ventas(id),
 CONSTRAINT fk_productos FOREIGN KEY(producto_id) REFERENCES productos(id)
