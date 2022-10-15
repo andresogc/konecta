@@ -16,12 +16,12 @@ INSERT INTO categorias VALUES(NULL,'Paquetes');
 
 
 CREATE TABLE productos(
-id		int(255) auto_increment not null,
+id		        int(255) auto_increment not null,
 categoria_id	int(255) not null,
 nombre		    varchar(100) not null,
 referencia	    varchar(100) not null,
-precio		    float(100,2) not null,
-peso    	    int(255),
+precio		    int(255) not null,
+peso    	    int(255) not null,
 stock		    int(255) not null,
 fecha_creacion	date not null,
 CONSTRAINT pk_productos PRIMARY KEY(id),
@@ -32,7 +32,7 @@ CONSTRAINT fk_producto_categorias FOREIGN KEY(categoria_id) REFERENCES categoria
 
 CREATE TABLE ventas(
 id		int(255) auto_increment not null,
-costo_total		float(200,2) not null,
+costo_total		int(255) not null,
 fecha		date, 
 hora		time,
 CONSTRAINT pk_ventas PRIMARY KEY(id)

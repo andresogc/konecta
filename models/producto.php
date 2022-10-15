@@ -112,24 +112,22 @@ class Producto{
     public function save(){
         $sql="INSERT INTO productos VALUES(NULL,'{$this->getCategoria_id()}','{$this->getNombre()}','{$this->getReferencia()}',{$this->getPrecio()},{$this->getPeso()},{$this->getStock()},CURDATE());";
         $save = $this->db->query($sql); 
-             
-                
+
         $result=false;
         if($save){
             $result=true;
         }
         return $result;
-
         
     }
 
     public function edit(){
-    $sql="UPDATE productos SET nombre='{$this->getNombre()}',precio={$this->getPrecio()},stock={$this->getStock()},categoria_id={$this->getCategoria_id()}";
+    $sql="UPDATE productos SET  categoria_id={$this->getCategoria_id()} , nombre='{$this->getNombre()}',referencia='{$this->getReferencia()}', precio={$this->getPrecio()},peso={$this->getPeso()},stock={$this->getStock()}";
               
         $sql.=" WHERE id={$this->id};";
 
         $save = $this->db->query($sql); 
-                               
+
         $result=false;
         if($save){
             $result=true;
